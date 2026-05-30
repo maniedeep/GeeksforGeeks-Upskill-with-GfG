@@ -1,0 +1,271 @@
+# Input and Output in Programming
+
+## Difficulty: Basic
+
+---
+
+## Problem Statement
+
+Input and Output (I/O) are fundamental concepts in programming.
+
+* **Input** allows a program to receive data from users, files, or other sources.
+* **Output** allows a program to display results or information.
+* I/O operations make programs interactive and capable of processing dynamic data.
+
+---
+
+## Concept
+
+Every programming language provides mechanisms to:
+
+1. Accept data from the user (**Input**)
+2. Display data to the user (**Output**)
+
+### General Flow
+
+```text
+User Input → Program Processing → Output
+```
+
+---
+
+## Input and Output in C
+
+### Key Functions
+
+* `printf()` → Displays output.
+* `scanf()` → Reads input.
+* `\n` → New line character.
+
+### Common Format Specifiers
+
+| Specifier | Data Type |
+| --------- | --------- |
+| `%d`      | Integer   |
+| `%f`      | Float     |
+| `%c`      | Character |
+| `%s`      | String    |
+
+### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    int age;
+    float height;
+    char grade;
+    char name[20];
+
+    scanf("%d %f %c %s", &age, &height, &grade, name);
+
+    printf("Your age: %d\n", age);
+    printf("Your height: %.2f\n", height);
+    printf("Your grade: %c\n", grade);
+    printf("Your name: %s\n", name);
+
+    return 0;
+}
+```
+
+### Input
+
+```text
+20 5.9 A Alice
+```
+
+### Output
+
+```text
+Your age: 20
+Your height: 5.90
+Your grade: A
+Your name: Alice
+```
+
+---
+
+## Input and Output in C++
+
+### Key Components
+
+* `cin` → Input stream.
+* `cout` → Output stream.
+* `endl` or `\n` → New line.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    float height;
+    char grade;
+    string name;
+
+    cin >> age >> height >> grade >> name;
+
+    cout << "Your age: " << age << "\n";
+    cout << "Your height: " << height << "\n";
+    cout << "Your grade: " << grade << "\n";
+    cout << "Your name: " << name << "\n";
+
+    return 0;
+}
+```
+
+### Input
+
+```text
+20 5.9 A Alice
+```
+
+### Output
+
+```text
+Your age: 20
+Your height: 5.9
+Your grade: A
+Your name: Alice
+```
+
+---
+
+## Input and Output in Java
+
+### Key Components
+
+* `Scanner` → Input handling.
+* `System.out.print()` → Output without newline.
+* `System.out.println()` → Output with newline.
+
+### Example
+
+```java
+import java.util.Scanner;
+
+public class GFG {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int age = sc.nextInt();
+        float height = sc.nextFloat();
+        char grade = sc.next().charAt(0);
+        String name = sc.next();
+
+        System.out.println("Your age: " + age);
+        System.out.println("Your height: " + height);
+        System.out.println("Your grade: " + grade);
+        System.out.println("Your name: " + name);
+    }
+}
+```
+
+---
+
+## Input and Output in Python
+
+### Key Functions
+
+* `input()` → Reads input as string.
+* `print()` → Displays output.
+* Type conversion using `int()`, `float()`, etc.
+
+### Example
+
+```python
+age, height, grade, name = input().split()
+
+age = int(age)
+height = float(height)
+
+print("Your age:", age)
+print("Your height:", height)
+print("Your grade:", grade)
+print("Your name:", name)
+```
+
+---
+
+## Input and Output in C#
+
+### Key Functions
+
+* `Console.ReadLine()` → Input.
+* `Console.Write()` → Output without newline.
+* `Console.WriteLine()` → Output with newline.
+
+### Example
+
+```csharp
+using System;
+
+class GFG {
+    static void Main() {
+        string[] inputs = Console.ReadLine().Split();
+
+        int age = int.Parse(inputs[0]);
+        float height = float.Parse(inputs[1]);
+        char grade = char.Parse(inputs[2]);
+        string name = inputs[3];
+
+        Console.WriteLine("Your age: " + age);
+        Console.WriteLine("Your height: " + height);
+        Console.WriteLine("Your grade: " + grade);
+        Console.WriteLine("Your name: " + name);
+    }
+}
+```
+
+---
+
+## Input and Output in JavaScript (Node.js)
+
+### Key Components
+
+* `readline` → Input handling.
+* `console.log()` → Output.
+
+### Example
+
+```javascript
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readline.question('', input => {
+    const [age, height, grade, name] = input.split(' ');
+
+    console.log(`Your age: ${age}`);
+    console.log(`Your height: ${height}`);
+    console.log(`Your grade: ${grade}`);
+    console.log(`Your name: ${name}`);
+
+    readline.close();
+});
+```
+
+---
+
+## Summary
+
+| Language   | Input                 | Output                 |
+| ---------- | --------------------- | ---------------------- |
+| C          | `scanf()`             | `printf()`             |
+| C++        | `cin`                 | `cout`                 |
+| Java       | `Scanner`             | `System.out.println()` |
+| Python     | `input()`             | `print()`              |
+| C#         | `Console.ReadLine()`  | `Console.WriteLine()`  |
+| JavaScript | `readline.question()` | `console.log()`        |
+
+---
+
+## Key Takeaways
+
+* Input allows programs to receive data.
+* Output allows programs to display results.
+* Every programming language provides built-in I/O mechanisms.
+* Understanding I/O is the first step toward solving programming problems and building interactive applications.
